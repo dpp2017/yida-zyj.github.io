@@ -24,7 +24,7 @@
 	</head>
 	<body class="loading">
 		<div id="wrapper">
-			<!-- <div id="bg" class="phone-class" style="display: none;"></div> -->
+			<div id="bg" class="phone-class" style="display: none;"></div>
 			<video src="http://s3.bytecdn.cn/aweme/resource/web/static/image/index/new-tvc_889b57b.mp4" class="pc-class" loop width="100%"
 			 height="110%" autoplay="autoplay" muted="muted" cue-before:none; id="sp"></video>
 			<div id="overlay"></div>
@@ -69,14 +69,19 @@
 		.pc-class{
 			object-fit: cover;
 		}
-	/* @media (max-width: 419px) {
+	@media (max-width: 419px) {
 		.pc-class {
 			display: none;	
 		}
 		.phone-class {
 			display: block !important;
+			background-size: 1300px auto !important;
+			height: 100vh !important;
 		}
-	} */
+		.ival {
+			display: none;
+		}
+	} 
 
 	.ival{
 		height: 30px;
