@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Aerial</title>
+		<title>Yida</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -25,7 +25,7 @@
 	<body class="loading">
 		<div id="wrapper">
 			<div id="bg" class="phone-class" style="display: none;"></div>
-			<video src="http://s3.bytecdn.cn/aweme/resource/web/static/image/index/new-tvc_889b57b.mp4" class="pc-class" loop width="100%"
+			<video src="https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4" class="pc-class" loop width="100%"
 			 height="110%" autoplay="autoplay" muted="muted" cue-before:none; id="sp"></video>
 			<div id="overlay"></div>
 			<div id="main">
@@ -33,7 +33,7 @@
 					<header id="header">
 						<h1>Yida</h1>
 						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p> -->
-						<p>See It All &nbsp;&bull;&nbsp; See It No</p>
+						<p>人生来来往往 &nbsp;&bull;&nbsp; 来日并不方长</p>
 						<nav>
 							<ul>
 								<li><a href="https://zyj_yida.gitee.io" target="_blank" class="fa fa-home"><span>博客主页</span></a></li>
@@ -45,7 +45,11 @@
 					</header>
 				<!-- Footer -->
 					<footer id="footer">
-						<div><img src="./public/close.png" onclick="changeVal()" class="ival" id="voice"/></div>
+						<div>
+							<img src="./public/close.png" onclick="changeVal()" class="ival" style="margin-right:2rem ;" id="voice"/>
+							<img src="./public/play.png" onclick="ispaly()" class="ival" id="bofang"/>
+							<img src="./public/next.png" onclick="nextPaly()" class="ival" style="margin-left:2rem ;" id="next"/>
+						</div>
 						<!-- <span class="copyright">&copy; Untitled. Design.</span> -->
 					</footer>
 				
@@ -53,6 +57,11 @@
 		</div>
 	</body>
 	<script>
+		const srcs = [
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4",
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/2.mp4",
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/3.mp4"
+		]
 		function changeVal(){
 			var voice=document.querySelector("#voice");
 			var video=document.querySelector("#sp");
@@ -62,6 +71,29 @@
 			}else{
 				video.muted=true;
 				voice.setAttribute("src","./public/close.png");
+			}
+		}
+		//播放暂停
+		function ispaly(){
+			var bofang=document.querySelector("#bofang");
+			var video=document.querySelector("#sp");
+			if(video.paused) {
+				bofang.setAttribute("src","./public/play.png");
+				video.play();
+			}else {
+				bofang.setAttribute("src","./public/pause.png");
+				video.pause();
+			}
+		}
+		//切换
+		function nextPaly() {
+			var video=document.querySelector("#sp");
+			var src = video.src;
+			var index = srcs.indexOf(src); 
+			if(index == 2){
+				video.src = srcs[0]
+			}else{
+				video.src = srcs[index + 1];
 			}
 		}
 	</script>
@@ -84,7 +116,7 @@
 	} 
 
 	.ival{
-		height: 30px;
+		height: 25px;
 		width: auto;
 	}
 		
