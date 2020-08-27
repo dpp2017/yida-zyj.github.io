@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Aerial</title>
+		<title>Yida</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -22,7 +22,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body class="loading">
+	<body class="loading" style="background: url(https://zyj_yida.gitee.io/source/img/indexbg/17.jpg) center center / cover no-repeat;height: 100vh;">
 		<div id="wrapper">
 			<div id="bg" style="display: none;" class="phone-class"></div>
 			<video src="https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4" class="pc-class" loop width="100%"
@@ -32,27 +32,72 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Adam Jensen</h1>
-						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
+						<h1>Yida</h1>
+						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p> -->
+						<p>人生来来往往 &nbsp;&bull;&nbsp; 来日并不方长</p>
 						<nav>
 							<ul>
-								<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-								<li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-								<li><a href="#" class="fa fa-dribbble"><span>Dribbble</span></a></li>
-								<li><a href="#" class="fa fa-github"><span>Github</span></a></li>
-								<li><a href="#" class="fa fa-envelope-o"><span>Email</span></a></li>
+								<li><a href="https://zyj_yida.gitee.io" target="_blank" class="fa fa-home"><span>博客主页</span></a></li>
+								<li><a href="https://zyj_yida.gitee.io/source/game/" target="_blank" class="fa fa-gamepad"><span>娱乐</span></a></li>
+								<li><a href="https://zyj_yida.gitee.io/categories/Others/" target="_blank" class="fa fa-star"><span>收藏</span></a></li>
+								<li><a href="https://github.com/yida-zyj" target="_blank" class="fa fa-github"><span>Email</span></a></li>
 							</ul>
 						</nav>
 					</header>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design.</span>
+						<div>
+							<img src="./public/close.png" onclick="changeVal()" class="ival" style="margin-right:2rem ;" id="voice"/>
+							<img src="./public/play.png" onclick="ispaly()" class="ival" id="bofang"/>
+							<img src="./public/next.png" onclick="nextPaly()" class="ival" style="margin-left:2rem ;" id="next"/>
+						</div>
 					</footer>
 				
 			</div>
 		</div>
 	</body>
+	<script>
+		const srcs = [
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4",
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/2.mp4",
+			"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/3.mp4"
+		]
+		function changeVal(){
+			var voice=document.querySelector("#voice");
+			var video=document.querySelector("#sp");
+			if(video.muted) {
+				video.muted=false;
+				voice.setAttribute("src","./public/open.png");
+			}else{
+				video.muted=true;
+				voice.setAttribute("src","./public/close.png");
+			}
+		}
+		//播放暂停
+		function ispaly(){
+			var bofang=document.querySelector("#bofang");
+			var video=document.querySelector("#sp");
+			if(video.paused) {
+				bofang.setAttribute("src","./public/play.png");
+				video.play();
+			}else {
+				bofang.setAttribute("src","./public/pause.png");
+				video.pause();
+			}
+		}
+		//切换
+		function nextPaly() {
+			var video=document.querySelector("#sp");
+			var src = video.src;
+			var index = srcs.indexOf(src); 
+			if(index == 2){
+				video.src = srcs[0]
+			}else{
+				video.src = srcs[index + 1];
+			}
+		}
+	</script>
 	<style>
 		.pc-class{
 			object-fit: cover;
@@ -64,6 +109,14 @@
 		.phone-class {
 			display: block !important;
 		}
-	} 
+		.ival {
+			display: none;
+		}
+		} 
+
+		.ival{
+		height: 25px;
+		width: auto;
+		}
 	</style>
 </html>
