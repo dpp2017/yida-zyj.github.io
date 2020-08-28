@@ -24,9 +24,10 @@
 	</head>
 	<body class="loading" style="background: url(https://zyj_yida.gitee.io/source/img/indexbg/17.jpg) center center / cover no-repeat;height: 100vh;">
 		<div id="wrapper">
-			<div id="bg" class="phone-class"></div>
-			<!-- <video src="https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4" class="pc-class" loop width="100%"
-			 height="110%" autoplay="autoplay" muted="muted" cue-before:none; id="sp"></video> -->
+			<div id="bg" style="display: none;" class="phone-class"></div>
+			<video src=	"http://ykugc.cp31.ott.cibntv.net/6974D3C06E04971E7DDA82E52/03000A01005F4949F351C367A2EB0329AF5943-EE1D-4D61-9A78-BA0CBBE01A73.mp4?ccode=050F&duration=292&expire=18000&psid=2a78b92122c07cb65657bab4e39241b144151&ups_client_netip=702d61a7&ups_ts=1598638820&ups_userid=2049880116&utid=PSgnF9XPk3ICAXAtYWoHASVS&vid=XNDgyMzMwMTQxNg%3D%3D&vkey=B2e954731ed007843b73600b4c4516aef&eo=1&rid=20000000C0A88C265F69F74430A2416C2058B00102000000&bc=2&dre=u21&si=42&dst=1",
+			class="pc-class" loop width="100%"
+			 height="110%" autoplay="autoplay" muted="muted" cue-before:none; id="sp"></video>
 			<div id="overlay"></div>
 			<div id="main">
 
@@ -47,22 +48,22 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<!-- <div>
+						<div>
 							<img src="./public/close.png" onclick="changeVal()" class="ival" style="margin-right:2rem ;" id="voice"/>
 							<img src="./public/play.png" onclick="ispaly()" class="ival" id="bofang"/>
 							<img src="./public/next.png" onclick="nextPaly()" class="ival" style="margin-left:2rem ;" id="next"/>
-						</div> -->
+						</div>
 					</footer>
 				
 			</div>
 		</div>
 	</body>
 	<script>
-		// const srcs = [
-		// 	"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/1.mp4",
-		// 	"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/2.mp4",
-		// 	"https://blog-1302701305.cos.ap-chengdu.myqcloud.com/blog/home/3.mp4"
-		// ]
+		const srcs = [
+			"http://ykugc.cp31.ott.cibntv.net/6974D3C06E04971E7DDA82E52/03000A01005F4949F351C367A2EB0329AF5943-EE1D-4D61-9A78-BA0CBBE01A73.mp4?ccode=050F&duration=292&expire=18000&psid=2a78b92122c07cb65657bab4e39241b144151&ups_client_netip=702d61a7&ups_ts=1598638820&ups_userid=2049880116&utid=PSgnF9XPk3ICAXAtYWoHASVS&vid=XNDgyMzMwMTQxNg%3D%3D&vkey=B2e954731ed007843b73600b4c4516aef&eo=1&rid=20000000C0A88C265F69F74430A2416C2058B00102000000&bc=2&dre=u21&si=42&dst=1",
+			"http://ykugc.cp31.ott.cibntv.net/677354F644C4C71FC319121DC/03000A01005F494A2C418F87A2EB036A02EE54-3E8E-458A-8E29-7D0712BEB47C.mp4?ccode=050F&duration=15&expire=18000&psid=9f9524051c1177e5c9e58391f0e9d96244151&ups_client_netip=702d61a7&ups_ts=1598638928&ups_userid=2049880116&utid=PSgnF9XPk3ICAXAtYWoHASVS&vid=XNDgyMzMwMzA1Ng%3D%3D&vkey=B66daaf982dbd844d0bedd673ce7fcada&eo=1&rid=20000000F90933D8E6747B8CEC7CCD08498C16C202000000&bc=2&dre=u21&si=42&dst=1",
+			"http://ykugc.cp31.ott.cibntv.net/6773EC6A7BC337152CBB82290/03000A01005F494B38F96CD7A2EB03E904574A-E4F4-471B-A767-3E6C3740C4F8.mp4?ccode=050F&duration=30&expire=18000&psid=c0d43d798148c60ee5ac2c483e4d3ebe44151&ups_client_netip=702d61a7&ups_ts=1598639048&ups_userid=2049880116&utid=PSgnF9XPk3ICAXAtYWoHASVS&vid=XNDgyMzMwNjU0OA%3D%3D&vkey=Bc3bea1c02d2775d4e12136640d717f7a&eo=1&rid=20000000915F154EBEBA79E2708496A71CE28E8402000000&bc=2&dre=u21&si=42&dst=1"
+		]
 		function changeVal(){
 			var voice=document.querySelector("#voice");
 			var video=document.querySelector("#sp");
